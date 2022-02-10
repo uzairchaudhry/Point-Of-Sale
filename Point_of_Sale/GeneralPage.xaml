@@ -1,0 +1,112 @@
+﻿<Page x:Class="Point_of_Sale.GeneralPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Point_of_Sale"
+      mc:Ignorable="d" 
+      d:DesignHeight="467" d:DesignWidth="297"
+      Title="GerneralPage">
+
+    <Grid ShowGridLines="True" Background="Goldenrod">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="clickSoft">
+            <Border CornerRadius="6"
+                BorderBrush="Gray"
+                Background="LightGray"
+                BorderThickness="2">
+                <WrapPanel>
+                    <Image Source="Images/items/Soft1.png" Width="50" Height="50"></Image>
+                    <StackPanel>
+                        <TextBlock Name="Soft" Text="SoftDrink" FontSize="14" FontWeight="Bold" TextAlignment="Center"/>
+                        <TextBlock FontSize="14"  Text="Quantity 50"/>
+                        <TextBlock FontSize="14"  Text="Price 60"/>
+                    </StackPanel>
+                </WrapPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="clickDrink">
+            <Border CornerRadius="6"
+                BorderBrush="Gray"
+                Background="LightGray"
+                BorderThickness="2">
+                <WrapPanel>
+                    <Image Source="Images/items/Soft2.png" Width="50" Height="50"></Image>
+                    <StackPanel>
+                        <TextBlock  Text="Drink" FontSize="14" FontWeight="Bold" TextAlignment="Center"/>
+                        <TextBlock  FontSize="14"  Text="Quantity 40"/>
+                        <TextBlock  FontSize="14"  Text="Price 80"/>
+                    </StackPanel>
+                </WrapPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="clickCC">
+            <Border CornerRadius="6"
+                BorderBrush="Gray"
+                Background="LightGray"
+                BorderThickness="2">
+                <WrapPanel>
+                    <Image Source="Images/items/Coffee.png" Width="50" Height="50"></Image>
+                    <StackPanel>
+                        <TextBlock Text="Cold Coffe" FontSize="14" FontWeight="Bold" TextAlignment="Center"/>
+                        <TextBlock  FontSize="14"  Text="Quantity 5"/>
+                        <TextBlock  FontSize="14"  Text="Price 100"/>
+                    </StackPanel>
+                </WrapPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="clickSB">
+            <Border CornerRadius="6"
+                BorderBrush="Gray"
+                Background="LightGray"
+                BorderThickness="2">
+                <WrapPanel>
+                    <Image Source="Images/items/Burger1.png" Width="50" Height="50"></Image>
+                    <StackPanel>
+                        <TextBlock Text="Burger" FontSize="14" FontWeight="Bold" TextAlignment="Center"/>
+                        <TextBlock  FontSize="14"  Text="Quantity 10"/>
+                        <TextBlock  FontSize="14"  Text="Price 200"/>
+                    </StackPanel>
+                </WrapPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="clickCig">
+            <Border CornerRadius="6"
+                BorderBrush="Gray"
+                Background="LightGray"
+                BorderThickness="2">
+                <WrapPanel>
+                    <Image Source="Images/items/ciggerate1.jpg" Width="50" Height="50"></Image>
+                    <StackPanel>
+                        <TextBlock Text="Ciggerate" FontSize="14" FontWeight="Bold" TextAlignment="Center"/>
+                        <TextBlock  FontSize="14"  Text="Quantity 20"/>
+                        <TextBlock  FontSize="14"  Text="Price 150"/>
+                    </StackPanel>
+                </WrapPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="clickCI">
+            <Border CornerRadius="6"
+                BorderBrush="Gray"
+                Background="LightGray"
+                BorderThickness="2">
+                <WrapPanel>
+                    <Image Source="Images/items/iceCream1.jpg" Width="50" Height="50"></Image>
+                    <StackPanel>
+                        <TextBlock Text="IceCream" FontSize="14" FontWeight="Bold" TextAlignment="Center"/>
+                        <TextBlock  FontSize="14"  Text="Quantity 10"/>
+                        <TextBlock  FontSize="14"  Text="Price 80"/>
+                    </StackPanel>
+                </WrapPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>

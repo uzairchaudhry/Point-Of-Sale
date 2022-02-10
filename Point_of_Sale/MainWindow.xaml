@@ -1,0 +1,104 @@
+﻿<Window x:Class="Point_of_Sale.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Point_of_Sale"
+        mc:Ignorable="d"
+        Title="Uzair Store" Height="550" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5.5*"></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Name="pdf" Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <DataGrid Name="dgrid" AutoGenerateColumns="False" >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="50" Header="Delete">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" Click="deleteRow"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Width="120" Header="Items" Binding="{Binding Path=itemName}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="60" Header="Price" Binding="{Binding Path=price}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="50" Header="Qty" Binding="{Binding Path=quantity}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="60" Header="Total" Binding="{Binding Path=total}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="50" Header="Tax" Binding="{Binding Path=tax}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Comment" Binding="{Binding Path=comment}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Row="1" >
+                <StackPanel>
+                    <DockPanel Name="check" Margin="0 10 0 0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right">
+                        <CheckBox Name="salt" Content="Salt" Checked="checkSalt"></CheckBox>
+                        <CheckBox Name="milk" Content="Milk" Checked="checkM"></CheckBox>
+                        <CheckBox Name="sugar" Content="Sugar" Checked="checkS"></CheckBox>
+                        <CheckBox Name="cream" Content="Cream" Checked="checkC"></CheckBox>
+                        <CheckBox Name="spicy" Content="Spicy" Checked="checkSP"></CheckBox>
+                        <CheckBox Name="ice" Content="IceCream" Checked="checkI"></CheckBox>
+                    </DockPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition ></ColumnDefinition>
+                            <ColumnDefinition ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Total" Grid.Row="0"></Label>
+                        <TextBlock Name="total" Grid.Row="0" Grid.Column="1" >0</TextBlock >
+                        <Label Content="Discount" Grid.Row="1"></Label>
+                        <TextBlock Name="discount" Grid.Row="1" Grid.Column="1" >0</TextBlock >
+                        <Label Content="Sub Total" Grid.Row="2"></Label>
+                        <TextBlock Name="subtotal" Grid.Row="2" Grid.Column="1" >0</TextBlock >
+                        <Label Content="Tax 14.46%" Grid.Row="3"></Label>
+                        <TextBlock Name="tax" Grid.Row="3" Grid.Column="1" >0</TextBlock >
+                        <Separator Background="red" Height="10" Grid.Row="4"></Separator>
+                        <Separator Background="red" Height="10" Grid.Row="4" Grid.Column="1" ></Separator>
+                        <Label Content="Total Payable" Grid.Row="5"></Label>
+                        <TextBlock Name="totalpay" Grid.Row="5" Grid.Column="1" >0</TextBlock >
+                        <Label Content="Total Quantity" Grid.Row="6"></Label>
+                        <TextBlock Name="totalqan" Grid.Row="6" Grid.Column="1" ></TextBlock >
+                        <Button Content="Payment"  Grid.Row="7" Click="payment" Background="Tomato"></Button>
+                        <Button Content="Suspend" Grid.Row="7" Grid.Column="1" Click="suspend" Background="GreenYellow"></Button>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                <StackPanel Margin="5 0 5 0">
+                    <Button Content="Gernal" Margin="0 0 0 10" Height="60" Background="Pink" Click="gernalPage"></Button>
+                    <Button Content="SoftDrint" Margin="0 0 0 10" Height="60" Background="Pink" Click="SoftDrinkPage" ></Button>
+                    <Button Content="Coffe" Margin="0 0 0 10" Height="60" Background="Pink" Click="coffePage" ></Button>
+                    <Button Content="Ciggerate" Margin="0 0 0 10" Height="60" Background="Pink" Click="ciggeratePage" ></Button>
+                    <Button Content="Salad" Margin="0 0 0 10" Height="60" Background="Pink" Click="FoodPage" ></Button>
+                    <Button Content="Burgers" Margin="0 0 0 10" Height="60" Background="Pink" Click="burgerPage" ></Button>
+                    <Button Content="Fruit" Margin="0 0 0 10" Height="60" Background="Pink" Click="fruitPage" ></Button>
+                    <Button Content="IceCream" Margin="0 0 0 10" Height="60" Background="Pink" Click="icecreamPage" ></Button>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Frame Name="page" NavigationUIVisibility="Hidden">
+
+            </Frame>
+        </Grid>
+    </Grid>
+</Window>
